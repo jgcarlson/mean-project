@@ -1,0 +1,38 @@
+{
+  "name": "mean-project",
+  "version": "1.0.0",
+  "description": "Starter MEAN project.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/npm/npm.git"
+  },
+  "author": "JC",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "jsonwebtoken": "^7.4.1",
+    "mongoose": "^4.11.3",
+    "morgan": "^1.8.2",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.2.1"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "MEAN",
+    "Angular 4",
+    "Express 4",
+    "Node 6",
+    "MongoDB 3",
+    "bcrypt",
+    "JWT",
+    "PassportJS",
+    "Mongoose"
+  ]
+}

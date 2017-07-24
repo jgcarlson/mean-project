@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-block">
+          <h3>Register</h3>
+          <div *ngFor="let error of errors">
+            <ngb-alert *ngIf="!closed" (close)="closed=true" type="danger"><p>{{ error }}</p></ngb-alert>
+          </div>
+          <form #reg="ngForm" (submit)="registerUser()">
+            <input type="text" name="username" [(ngModel)]="newUser.username" class="form-control" placeholder="Username" minlength="3" required>
+            <input type="text" name="firstname" [(ngModel)]="newUser.firstname" class="form-control" placeholder="First Name" minlength="2" required>
+            <input type="text" name="lastname" [(ngModel)]="newUser.lastname" class="form-control" placeholder="Last Name" minlength="2" required>
+            <input type="text" name="email" [(ngModel)]="newUser.email" class="form-control" placeholder="Email" pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" minlength="6" required>
+            <input type="text" name="dob" [(ngModel)]="newUser.dob" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Birth Date" required>
+            <input type="password" name="password" [ngClass]="{'red': newUser.password != newUser.confirm}" [(ngModel)]="newUser.password" class="form-control" placeholder="Password" minlength="7" required>
+            <input type="password" name="confirm" [(ngModel)]="newUser.confirm" class="form-control" placeholder="Confirm Password" required>
+            <button type="submit" class="btn btn-primary btn-block" [disabled]="newUser.password != newUser.confirm || !reg.valid" >Register!</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-block">
+          <h3>Login</h3>
+          <div *ngFor="let error of logerrors">
+            <ngb-alert *ngIf="!closed" (close)="closed=true" type="danger"><p>{{ error }}</p></ngb-alert>
+          </div>
+          <form #log="ngForm" (submit)="login()">
+            <input type="text" name="username" [(ngModel)]="user.username" class="form-control" placeholder="Username" minlength="3" required>
+            <input type="password" name="password" [(ngModel)]="user.password" class="form-control" placeholder="Password" minlength="7" required>
+            <button type="submit" class="btn btn-primary btn-block" [disabled]="!log.valid">Login!</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-info btn-block">Button 1</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-warning btn-block">Button 2</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-success btn-block" [routerLink]="['/dashboard']">Dashboard</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-primary btn-block">Button 3</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-danger btn-block" (click)="logout()" [routerLink]="['/']">Logout</button>
+    </div>
+  </div>
+</div>
