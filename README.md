@@ -1,2 +1,2 @@
-# mean-project
+# mean-starter
 A starter for MEAN projects.
